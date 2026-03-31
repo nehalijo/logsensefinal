@@ -1,0 +1,6 @@
+data/HDFS.log
+models/
+outputs/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
