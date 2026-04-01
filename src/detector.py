@@ -66,7 +66,8 @@ class AnomalyDetector:
             counts = [np.sum(seq == i) for i in range(5)]  # counts per event type
             error_rate = counts[2] / non_zero_len           # ERROR count / length
             first_event = seq[0]
-            last_nonpad = seq[np.max(np.nonzero(seq)) if np.any(seq != 0) else 0]
+            nonzero_idx = np.nonzero(seq)[0]
+            last_nonpad = seq[nonzero_idx[-1]] if len(nonzero_idx) > 0 else 0
             features.append(counts + [non_zero_len, error_rate, first_event, int(last_nonpad)])
         return np.array(features, dtype=float)
 
