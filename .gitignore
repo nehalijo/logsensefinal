@@ -1,5 +1,9 @@
 data/HDFS.log
-models/
+models/*
+!models/autoencoder/
+!models/autoencoder/model.keras
+!models/autoencoder/config.pkl
+!models/isolation_forest.pkl
 outputs/
 __pycache__/
 *.pyc
